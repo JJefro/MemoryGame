@@ -320,7 +320,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 334HNT23HZ;
-				INFOPLIST_FILE = ConcetrationGame/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MemoryGame/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,7 +339,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 334HNT23HZ;
-				INFOPLIST_FILE = ConcetrationGame/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MemoryGame/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
