@@ -69,7 +69,7 @@
 		97FF75222674011A00E80031 = {
 			isa = PBXGroup;
 			children = (
-				97FF752D2674011A00E80031 /* ConcetrationGame */,
+				97FF752D2674011A00E80031 /* MemoryGame */,
 				97FF752C2674011A00E80031 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,7 +82,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		97FF752D2674011A00E80031 /* ConcetrationGame */ = {
+		97FF752D2674011A00E80031 /* MemoryGame */ = {
 			isa = PBXGroup;
 			children = (
 				97FF752E2674011A00E80031 /* AppDelegate.swift */,
@@ -94,7 +94,7 @@
 				97FF75392674011A00E80031 /* LaunchScreen.storyboard */,
 				97FF753C2674011A00E80031 /* Info.plist */,
 			);
-			path = ConcetrationGame;
+			path = MemoryGame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
