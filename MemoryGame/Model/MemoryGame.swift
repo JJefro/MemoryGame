@@ -9,9 +9,9 @@ import Foundation
 
 class MemoryGame {
     
-    var cards = [Card]()
+    private(set) var cards = [Card]()
     
-    var indexOfOneAndOnlyFaceUpCard: Int? {
+    private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
             var foundIndex: Int?
             for index in cards.indices {
@@ -33,7 +33,8 @@ class MemoryGame {
     }
     
     func chooseCard(at index: Int) {
-        if !cards[index].isMatched{
+        assert(cards.indices.contains(index), "MemoryGame.chooseCard(at \(index)): chosen index not in the cards.")
+        if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 //Check if match
                 if cards[matchIndex].identifier == cards[index].identifier {
@@ -49,6 +50,7 @@ class MemoryGame {
     }
     
     init(numberOfPairsOfCards: Int) {
+        assert(numberOfPairsOfCards > 0, "MemoryGame.init(\(numberOfPairsOfCards): you must have at least one pair of cards.")
         for _ in 1...numberOfPairsOfCards {
             let card = Card()
             cards += [card, card]

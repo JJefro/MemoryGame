@@ -9,7 +9,7 @@ import UIKit
 
 class MemoryViewController: UIViewController {
     
-    lazy var game = MemoryGame(numberOfPairsOfCards: numberOfPairsOfCards)
+    private lazy var game = MemoryGame(numberOfPairsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards: Int {
          return cardButtons.count / 2
@@ -19,27 +19,35 @@ class MemoryViewController: UIViewController {
     let buttonOpened = #imageLiteral(resourceName: "Opened card")
     let background = #imageLiteral(resourceName: "Background")
     
-    var emojiArray = ["👻", "🎃", "🧙🏾‍♀️", "🕷", "🧟‍♂️", "👺", "🐲", "🦄", "🌝", " 👹", "😱", "🍭", "🧛🏽‍♂️"]
+    private var emojiArray = ["👻", "🎃", "🧙🏾‍♀️", "🕷", "🧟‍♂️", "👺", "🐲", "🦄", "🌝", " 👹", "😱", "🍭", "🧛🏽‍♂️"]
     
-    var emoji = [Int : String]()
+    private var emoji = [Int : String]()
     
-    var touchesCount = 0 {
+    private(set) var flipCount = 0 {
         didSet {
-            touchesLabel.text = "Touches: \(touchesCount)"
+            touchesLabel.text = "Touches: \(flipCount)"
         }
     }
     
-    @IBOutlet var cardButtons: [UIButton]!
+    @IBOutlet private var cardButtons: [UIButton]!
     
-    @IBOutlet weak var touchesLabel: UILabel!
+    @IBOutlet private weak var touchesLabel: UILabel!
     
-    @IBAction func NewGame(_ sender: UIBarButtonItem) {
-        touchesCount = 0
+    @IBAction private func NewGame(_ sender: UIBarButtonItem) {
+        flipCount = 0
+        for index in cardButtons.indices {
+            let button = cardButtons[index]
+//            let card = game.cards[index]
+            button.setTitle("", for: .normal)
+            button.setBackgroundImage(buttonClosed, for: .normal)
+        }
+//        game.cards.shuffle()
+        
     }
     
     
-    @IBAction func cardButtonPressed(_ sender: UIButton) {
-        touchesCount += 1
+    @IBAction private func cardButtonPressed(_ sender: UIButton) {
+        flipCount += 1
         
         if let cardNumber = cardButtons.firstIndex(of: sender) {
             game.chooseCard(at: cardNumber)
@@ -49,28 +57,36 @@ class MemoryViewController: UIViewController {
         }
     }
     
-    func updateUI() {
+    private func updateUI() {
         for index in cardButtons.indices {
             let button = cardButtons[index]
             let card = game.cards[index]
             if card.isFaceUp {
                 button.setTitle(emoji(for: card), for: .normal)
                 button.setBackgroundImage(buttonOpened, for: .normal)
-                print("success")
             } else {
                 button.setTitle("", for: .normal)
                 button.setBackgroundImage(card.isMatched ? background : buttonClosed, for: .normal)
-                print("error")
             }
         }
     }
     
-    func emoji(for card: Card) -> String{
+    private func emoji(for card: Card) -> String{
         if emoji[card.identifier] == nil, emojiArray.count > 0 {
-            let randomIndex = Int(arc4random_uniform(UInt32(emojiArray.count)))
-            emoji[card.identifier] = emojiArray.remove(at: randomIndex)
+            emoji[card.identifier] = emojiArray.remove(at: emojiArray.count.arc4random)
         }
         return emoji[card.identifier] ?? "?"
     }
 }
 
+extension Int {
+    var arc4random: Int {
+        if self > 0{
+            return Int(arc4random_uniform(UInt32(self)))
+        } else if self < 0 {
+            return -Int(arc4random_uniform(UInt32(abs(self))))
+        } else {
+            return 0
+        }
+    }
+}
