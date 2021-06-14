@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97D7BEF42674D3A8006B0558 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D7BEF32674D3A8006B0558 /* Memory.swift */; };
+		97D7BEF42674D3A8006B0558 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D7BEF32674D3A8006B0558 /* MemoryGame.swift */; };
 		97D7BEF62674D3BD006B0558 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D7BEF52674D3BD006B0558 /* Card.swift */; };
 		97FF752F2674011A00E80031 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FF752E2674011A00E80031 /* AppDelegate.swift */; };
 		97FF75312674011A00E80031 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FF75302674011A00E80031 /* SceneDelegate.swift */; };
@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		97D7BEF32674D3A8006B0558 /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
+		97D7BEF32674D3A8006B0558 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		97D7BEF52674D3BD006B0558 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		97FF752B2674011A00E80031 /* MemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97FF752E2674011A00E80031 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		97D7BEF82674EA39006B0558 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				97D7BEF32674D3A8006B0558 /* Memory.swift */,
+				97D7BEF32674D3A8006B0558 /* MemoryGame.swift */,
 				97D7BEF52674D3BD006B0558 /* Card.swift */,
 			);
 			path = Model;
@@ -167,7 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97D7BEF42674D3A8006B0558 /* Memory.swift in Sources */,
+				97D7BEF42674D3A8006B0558 /* MemoryGame.swift in Sources */,
 				97FF75332674011A00E80031 /* MemoryViewController.swift in Sources */,
 				97D7BEF62674D3BD006B0558 /* Card.swift in Sources */,
 				97FF752F2674011A00E80031 /* AppDelegate.swift in Sources */,

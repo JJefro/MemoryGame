@@ -9,13 +9,17 @@ import UIKit
 
 class MemoryViewController: UIViewController {
     
-    lazy var game = Memory(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+    lazy var game = MemoryGame(numberOfPairsOfCards: numberOfPairsOfCards)
+    
+    var numberOfPairsOfCards: Int {
+         return cardButtons.count / 2
+    }
     
     let buttonClosed = #imageLiteral(resourceName: "Closed card")
     let buttonOpened = #imageLiteral(resourceName: "Opened card")
     let background = #imageLiteral(resourceName: "Background")
     
-    var emojiArray = ["👻", "🎃", "🧙🏾‍♀️", "🕷", "👻", "🕷", "🧟‍♂️", "👺", "🧟‍♂️", "🎃", "👺", "🧙🏾‍♀️", "🐲", "🦄",]
+    var emojiArray = ["👻", "🎃", "🧙🏾‍♀️", "🕷", "🧟‍♂️", "👺", "🐲", "🦄", "🌝", " 👹", "😱", "🍭", "🧛🏽‍♂️"]
     
     var emoji = [Int : String]()
     
